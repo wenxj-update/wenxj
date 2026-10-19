@@ -1,0 +1,29 @@
+# 轨道数据包(0xA002) - STK 推送的真实字段定义
+# 来源:任务规划输入输出数据包-20260907.xlsx > 轨道数据
+# 字节序:大端(>);量纲:位置0.01m,速度0.01cm/s=0.0001m/s
+name: stk_orbit_data
+description: "轨道数据包:GCGS与J2000两坐标系的位置速度,历元整秒"
+total_length: 62
+magic: 0xA002
+magic_offset: 0
+fields:
+  - {name: packet_type,    offset: 0,  type: u16, endian: ">"}
+  - {name: total_packets,  offset: 2,  type: u16, endian: ">"}
+  - {name: sequence_no,    offset: 4,  type: u16, endian: ">"}
+  - {name: cur_packet_no,  offset: 6,  type: u16, endian: ">"}
+  - {name: cur_packet_len, offset: 8,  type: u16, endian: ">", units: "bytes"}
+  - {name: epoch_seconds,  offset: 10, type: u32, endian: ">", units: "s"}
+  # GCGS 坐标系
+  - {name: gcgs_x,  offset: 14, type: i32, endian: ">", units: "m",   scale: 0.01}
+  - {name: gcgs_y,  offset: 18, type: i32, endian: ">", units: "m",   scale: 0.01}
+  - {name: gcgs_z,  offset: 22, type: i32, endian: ">", units: "m",   scale: 0.01}
+  - {name: gcgs_vx, offset: 26, type: i32, endian: ">", units: "m/s", scale: 0.0001}
+  - {name: gcgs_vy, offset: 30, type: i32, endian: ">", units: "m/s", scale: 0.0001}
+  - {name: gcgs_vz, offset: 34, type: i32, endian: ">", units: "m/s", scale: 0.0001}
+  # J2000 坐标系
+  - {name: j2k_x,  offset: 38, type: i32, endian: ">", units: "m",   scale: 0.01}
+  - {name: j2k_y,  offset: 42, type: i32, endian: ">", units: "m",   scale: 0.01}
+  - {name: j2k_z,  offset: 46, type: i32, endian: ">", units: "m",   scale: 0.01}
+  - {name: j2k_vx, offset: 50, type: i32, endian: ">", units: "m/s", scale: 0.0001}
+  - {name: j2k_vy, offset: 54, type: i32, endian: ">", units: "m/s", scale: 0.0001}
+  - {name: j2k_vz, offset: 58, type: i32, endian: ">", units: "m/s", scale: 0.0001}

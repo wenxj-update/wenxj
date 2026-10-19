@@ -1,0 +1,271 @@
+<?xml version="1.0" ?>
+<!-- edited with UltraEdit by nobody -->
+<ParameterConfig>
+    <!-- 系统运行所需的部分参数配置信息 -->
+    <ParameterList>
+        <!--自主数传文件类型 0-原始数据，1-处理数据（默认）-->
+        <transStorageFileType>1</transStorageFileType>
+        <!--立体成像角度个数-->
+        <stereoImgAngleSize>2</stereoImgAngleSize>
+        <!-- 计算姿态机动的方式 0:函数计算 1 查表获取 2 甲方提供的函数-->
+        <CalcTransTimeMethod>2</CalcTransTimeMethod>
+        <!-- RLT读取Win文件名字-->
+        <RLTFileWinName>/RLTData.dat</RLTFileWinName>
+        <!-- RLT读取Linux名字-->
+        <RLTFileLinuxName>/root/rwgh/update/rlt/</RLTFileLinuxName>
+        <!-- 赤道监测偏差，用于检查卫星是否在赤道附近 -->
+        <EquatorialMonDeviation>2</EquatorialMonDeviation>
+        <!-- 星间引导任务开始与结束时间间隔 -->
+        <InterGuideDelayTime>5700</InterGuideDelayTime>
+        <!-- 写日志文件标志 0-不写日志文件 1-写日志文件 -->
+        <WriteLogFlag>0</WriteLogFlag>
+        <!-- 日志等级，debug=1，info=2，warning=3，error=4-->
+        <WriteLogLev>1</WriteLogLev>
+        <!-- 报文的字节顺序(0-高字节在前,低字节在后 1-低字节在前,高字节在后) -->
+        <ByteType>0</ByteType>
+        <!-- 日期计算的基准年月日, 格式为YYYY-MM-DD.HH.mm.ss -->
+        <BaseOfYMD>2009-01-01 00:00:00</BaseOfYMD>
+        <!-- 时间更新方式 0-由外部控时间 1-自行控时间 -->
+        <TimeUpFlag>0</TimeUpFlag>
+        <!-- 最大侧摆角限制(度) -->
+        <MaxRoll>60</MaxRoll>
+        <!-- 最大俯仰角限制(度) -->
+        <MaxPitch>60</MaxPitch>
+        <!-- 最大偏航角限制(度) -->
+        <MaxYaw>180</MaxYaw>
+        <!-- 可见光视场角(度) -->
+        <VisibleAngle>2.1</VisibleAngle>
+        <!-- 可见光幅宽(千米) -->
+        <VisibleWidth>18.04</VisibleWidth>
+        <!-- 红外视场角(度) -->
+        <InfraredAngle>1.8</InfraredAngle>
+        <!-- 红外幅宽(千米) -->
+        <InfraredWidth>15</InfraredWidth>
+        <!-- 点目标最短成像时长(秒) -->
+        <MinImageTime>10</MinImageTime>
+        <!-- 条带冗余度(百分比) -->
+        <RedundanceRate>6</RedundanceRate>
+        <!-- 单圈次最大成像时间(秒) -->
+        <MaxImageTimeOfSingleCircle>420</MaxImageTimeOfSingleCircle>
+
+
+        <!-- 任务规划算法模块修改中的参数 -->
+        <!-- 最大姿态机动时长 (秒) -->
+        <MaxPoseTransformTime>120</MaxPoseTransformTime>
+
+        <!-- 最小姿态机动时长 (秒) -->
+        <MinPoseTransformTime>15</MinPoseTransformTime>
+
+        <!-- 相机连续成像时长 (分) -->
+        <CameraContinuousImgTime>8</CameraContinuousImgTime>
+
+        <!-- 单圈能源平衡连续最大成像时长 (分) -->
+        <OneCircleContinuousImgTime>7</OneCircleContinuousImgTime>
+
+        <!-- 三圈能源平衡连续最大成像时长 (分) -->
+        <ThreeCircleContinuousImgTime>7</ThreeCircleContinuousImgTime>
+
+        <!-- 规划周期 (秒) -->
+        <PlanPeriod>3600</PlanPeriod>
+
+        <!-- 目标库模式启动标识 (1 启用，0 禁用) -->
+        <TargetLibEnableFlag>1</TargetLibEnableFlag>
+
+        <!-- RLT 模式启用标识 (1 启用，0 禁用) -->
+        <RLTEnableFlag>0</RLTEnableFlag>
+
+        <!-- 卫星 SCID -->
+        <SatelliteId>483</SatelliteId>
+
+        <!-- 数传窗口校准上边沿对齐偏置(边记边放任务的数传窗口修改中，上边沿对齐+N 中的 N (对齐偏移量)) -->
+        <AlignmentOffset>5</AlignmentOffset>
+
+        <!-- 数传细化使能标识(边记边放中的数传细化标识 (Detail_ID)) -->
+        <TransWinsFlag>0</TransWinsFlag>
+
+        <!-- 星上处理模式 -->
+        <StarDealMode>1</StarDealMode>
+
+        <!-- 地面插件中，是否需要保留历史的需求 (1 是，0 否) -->
+        <SaveReqHistory>1</SaveReqHistory>
+
+        <!-- 任务规划策略类型 -->
+        <TaskPlanStrategy>3</TaskPlanStrategy>
+
+        <!-- 可见载荷瞬时视场全角 (度) -->
+        <VisiblePayloadInstantFOV>2.1</VisiblePayloadInstantFOV>
+
+        <!-- 红外载荷瞬时视场全角 (度) -->
+        <InfraredPayloadInstantFOV>1.65</InfraredPayloadInstantFOV>
+
+        <!-- 载荷观测视场沿轨方向全角 (度) -->
+        <PayloadObFOVAlongTrack>60</PayloadObFOVAlongTrack>
+
+        <!-- 载荷观测视场垂轨方向全角 (度) -->
+        <PayloadObFOVCrossTrack>60</PayloadObFOVCrossTrack>
+
+        <!-- 载荷成像最优观测视场沿轨方向全角 (度) -->
+        <PayloadImgOptimalObFOVAlongTrack>25</PayloadImgOptimalObFOVAlongTrack>
+
+        <!-- 载荷成像最优观测视场垂轨方向全角 (度) -->
+        <PayloadImgOptimalObFOVCrossTrack>25</PayloadImgOptimalObFOVCrossTrack>
+
+        <!-- 最大姿态机动角速度 (度/秒) -->
+        <MaxAttitudeManAngularVelocity>5.7</MaxAttitudeManAngularVelocity>
+
+        <!-- 最大姿态机动角加速度 (度/秒^2) -->
+        <MaxAttitudeManAngularAcceleration>1.4</MaxAttitudeManAngularAcceleration>
+
+        <!-- 星上自主数传规划下传数据类型 -->
+        <OnStarAutTransDataType>0</OnStarAutTransDataType>
+
+        <!-- RL 子图上注数量 -->
+        <RLNumber>1</RLNumber>
+
+        <!-- 地面程控固存任务号 -->
+        <FloorControlledStorageTaskId>1</FloorControlledStorageTaskId>
+
+        <!-- 目标库任务号 -->
+        <TargetLibStorageTaskId>61</TargetLibStorageTaskId>
+
+        <!-- RLT 任务号 -->
+        <RLTTaskStorageTaskId>131</RLTTaskStorageTaskId>
+
+        <!-- 星间协同任务号 -->
+        <InterCoordStorageTaskId>201</InterCoordStorageTaskId>
+
+        <!-- 原始固存文件号 -->
+        <RawDataStorageFileId>1</RawDataStorageFileId>
+
+        <!-- 处理固存文件号 -->
+        <DealDataStorageFileId>126</DealDataStorageFileId>
+
+        <!-- 星间引导目标模式 -->
+        <StarInterTargetModel>11</StarInterTargetModel>
+
+        <!-- 地面程控任务固存任务号结束值 -->
+        <FloorControlledStorageTaskEndId>60</FloorControlledStorageTaskEndId>
+
+        <!-- 目标库固存任务号结束值 -->
+        <TargetLibStorageTaskEndId>130</TargetLibStorageTaskEndId>
+
+        <!-- RLT 固存任务号结束值 -->
+        <RLTTaskStorageTaskEndId>200</RLTTaskStorageTaskEndId>
+
+        <!-- 星间协同固存任务号结束值 -->
+        <InterCoordStorageTaskEndId>255</InterCoordStorageTaskEndId>
+
+        <!-- 成像连续窗口最小间隔时长 (秒) -->
+        <ImageContinueGap>2</ImageContinueGap>
+
+        <!-- 阳光规避角 (度) -->
+        <SunAvoid>55</SunAvoid>
+
+
+        <!-- 转换默认值：任务优先级 -->
+        <DefaultPriority>100</DefaultPriority>
+
+        <!-- 转换默认值：载荷数据回传优先级 -->
+        <DefaultTransDataPriority>2</DefaultTransDataPriority>
+
+        <!-- 转换默认值：成像任务类型 -->
+        <DefaultImgTaskType>11</DefaultImgTaskType>
+
+        <!-- 转换默认值：成像数据压缩比 -->
+        <DefaultImgCompressRatio>4</DefaultImgCompressRatio>
+
+        <!-- 转换默认值：数传任务类型 -->
+        <DefaultTransTaskType>213</DefaultTransTaskType>
+
+        <!-- 转换默认值：回传数据类型 -->
+        <DefaultDisplayDataType>1</DefaultDisplayDataType>
+
+        <!-- 转换默认值：数传速率 -->
+        <DefaultTransSpeed>1</DefaultTransSpeed>
+
+        <!-- 转换默认值：明密状态 (1:明文, 0:密文) -->
+        <DefaultIsPlainText>0</DefaultIsPlainText>
+
+        <!-- 转换默认值：星上智能处理开关 (1:开, 0:关) -->
+        <DefaultAISwitch>1</DefaultAISwitch>
+
+        <!-- 转换默认值：切块大小 -->
+        <DefaultCutPieceSize>5</DefaultCutPieceSize>
+
+        <!-- 转换默认值：切块压缩比_可见光 -->
+        <DefaultCutCompressRationVisible>8</DefaultCutCompressRationVisible>
+
+        <!-- 转换默认值：切块压缩比_红外 -->
+        <DefaultCutCompressRationInfrared>8</DefaultCutCompressRationInfrared>
+
+        <!-- 转换默认值：星上处理输出产品级别 -->
+        <DefaultOnStarProOutLevel>1</DefaultOnStarProOutLevel>
+
+        <!-- 转换默认值：目标类型属性 -->
+        <DefaultTargetType>0</DefaultTargetType>
+
+        <!-- 转换默认值：目标优先级 -->
+        <DefaultTargetPriority>100</DefaultTargetPriority>
+
+        <!-- 转换默认值：成像模式 -->
+        <DefaultImageMode>1</DefaultImageMode>
+        <!-- 任务规划算法模块修改中的参数 -->
+
+        <!-- 没用到 -->
+        <!-- 最大侧摆角限制(度) -->
+        <SarMinRoll>10</SarMinRoll>
+        <!-- 最大俯仰角限制(度) -->
+        <SarMinPitch>0</SarMinPitch>
+        <!-- 最大偏航角限制(度) -->
+        <SarMinYaw>0</SarMinYaw>
+        <!-- 最大侧摆角限制(度) -->
+        <SarMaxRoll>47</SarMaxRoll>
+        <!-- 最大俯仰角限制(度) -->
+        <SarMaxPitch>47</SarMaxPitch>
+        <!-- 最大偏航角限制(度) -->
+        <SarMaxYaw>3.7</SarMaxYaw>
+        <!-- TC雷达最大侧摆角(度) -->
+        <TCMaxRoll>47</TCMaxRoll>
+        <!-- TC雷达俯仰角(度)[固定值] -->
+        <TCFixPitch>55</TCFixPitch>
+        <!-- TC雷达驻留时长(秒) -->
+        <TCStayLastTime>15</TCStayLastTime>
+        <!-- 更新粗规划固定周期 97*60-->
+        <UpdateRoughPlanCycle>5820</UpdateRoughPlanCycle>
+        <!-- 数传转动时间(秒) -->
+        <DataTransTurnTime>1</DataTransTurnTime>
+        <!-- 数传最大波束角(度) -->
+        <DataTransMaxAngle>70</DataTransMaxAngle>
+        <!-- 数传最小波束角(度) -->
+        <DataTransMinAngle>-70</DataTransMinAngle>
+        <!-- 地面站最小俯仰角(度) -->
+        <GroundStationMinAngle>5</GroundStationMinAngle>
+        <!-- 单圈平衡星地实拍实传(秒) -->
+        <RRTimeFloorOfSingleCircle>300</RRTimeFloorOfSingleCircle>
+        <!-- 单圈平衡星间实拍实传(秒) -->
+        <RRTimeSatOfSingleCircle>300</RRTimeSatOfSingleCircle>
+        <!-- 双圈平衡星地实拍实传(秒) -->
+        <RRTimeFloorOfDoubleCircle>420</RRTimeFloorOfDoubleCircle>
+        <!-- 双圈平衡星间实拍实传(秒) -->
+        <RRTimeSatOfDoubleCircle>420</RRTimeSatOfDoubleCircle>
+        <MaxProbeTimeOfOnce>480</MaxProbeTimeOfOnce>
+        <!-- 连续三圈次最大时长-成像(秒)此后需暂停两圈任务 -->
+        <MaxImageTimeOfThree>720</MaxImageTimeOfThree>
+        <!-- 连续三圈次最大时长-探测(秒)此后需暂停两圈任务 -->
+        <MaxProbeTimeOfThree>1080</MaxProbeTimeOfThree>
+        <!-- sar每天最大程序时长(秒) -->
+        <MaxImageTimeOfDay>3600</MaxImageTimeOfDay>
+        <!-- sar每天最大探测时长(秒) -->
+        <MaxDetectTimeOfDay>7200</MaxDetectTimeOfDay>
+        <!-- 任务执行发送给星务的提前量(秒) -->
+        <LeadTimeOfRun>120</LeadTimeOfRun>
+        <!-- 阳照无任务时长(秒) -->
+        <MaxLeisureTime>300</MaxLeisureTime>
+        <!-- 固存最大可用容量（Tb） -->
+        <MaxStorage>3.8</MaxStorage>
+        <!-- 测试 -->
+        <TestMode>1</TestMode>
+        <TestAddTime>5</TestAddTime>
+        <!-- 没用到 -->
+    </ParameterList>
+</ParameterConfig>

@@ -1,0 +1,26 @@
+=== 1. 加载 DLL ===
+=== 1. 加载 DLL ===
+DllInit OK
+=== 2. 构造 3101 报文 ===
+3101 报文 307 字节: 31 01 00 01 00 01 00 01 01 33 00 00 00 8e 21 6b 91 51 21 6b...
+task_earliest=560697681 task_latest=560699601 onboard_processing=1 targets=3
+  目标11101: 元任务窗 [560697561,560697801]
+  目标11102: 元任务窗 [560697571,560697811]
+  目标11103: 元任务窗 [560697581,560697821]
+=== 3. compute_plan 报文驱动(含轨道根数) ===
+A012 轨道帧 62 字节: a0 12 00 01 00 02 00 01 00 3e 21 6b 91 51 28 ff 34 44 00 00 04 4c 00 01 7c dc 00 01 86 a0 00 00 af c8 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+输入 1017 帧, 推进 1014 步 [560696661,560706801]
+  0x0F33: 2 条, 首条 222B
+=== 3b. 解析 DLL 输出 0F33 ===
+0F33: task_count=3
+  目标None 状态=0x07 时间[0,0] raw={'task_no': 142, 'target_no': 11101, 'status': 7, 'lon': 116.39, 'lat': 39.9, 'window_start': 0, 'window_end': 0, 'maneuver_start': 0, 'maneuver_end': 0, 'imaging_start': 0, 'imaging_end': 0, 'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0, 'task_source': 2, 'conflict_target': 0}
+  目标None 状态=0x07 时间[0,0] raw={'task_no': 142, 'target_no': 11102, 'status': 7, 'lon': 121.47, 'lat': 31.229999, 'window_start': 0, 'window_end': 0, 'maneuver_start': 0, 'maneuver_end': 0, 'imaging_start': 0, 'imaging_end': 0, 'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0, 'task_source': 2, 'conflict_target': 0}
+  目标None 状态=0x07 时间[0,0] raw={'task_no': 142, 'target_no': 11103, 'status': 7, 'lon': 113.259999, 'lat': 23.13, 'window_start': 0, 'window_end': 0, 'maneuver_start': 0, 'maneuver_end': 0, 'imaging_start': 0, 'imaging_end': 0, 'roll': 0.0, 'pitch': 0.0, 'yaw': 0.0, 'task_source': 2, 'conflict_target': 0}
+!!! DLL 未输出 0F11(可能需要轨道/链路输入)
+=== 5. 多目标成像记录指令生成(smart=0) ===
+plan_source=0F11(多目标成像记录), 指令 32 条
+AI/处理指令(应为空): []
+末尾 4 条: ['记录停止码', '记录停止码(小固存)', '记录任务一键关机', '控制结束标志']
+=== 全部验证通过 ===
+
+--- 等待 DLL 线程日志刷新 ---

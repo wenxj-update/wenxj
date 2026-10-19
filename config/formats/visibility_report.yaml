@@ -1,0 +1,18 @@
+# 可见性结果报文(C端输出) - 占位骨架
+# 真实格式按 xlsx "图任务精规划成像结果" sheet 替换(后续)
+name: visibility_report
+description: "可见性结果报文(占位,待按真实格式替换)"
+total_length: 28
+magic: 0x5B5B
+magic_offset: 0
+fields:
+  - {name: packet_type,    offset: 0,  type: u16, endian: ">"}
+  - {name: total_packets,  offset: 2,  type: u16, endian: ">"}
+  - {name: sequence_no,    offset: 4,  type: u16, endian: ">"}
+  - {name: cur_packet_no,  offset: 6,  type: u16, endian: ">"}
+  - {name: cur_packet_len, offset: 8,  type: u16, endian: ">", units: "bytes"}
+  - {name: satellite_id,   offset: 10, type: u16, endian: ">"}
+  - {name: target_id,       offset: 12, type: u32, endian: ">"}
+  - {name: aos_time,        offset: 16, type: u32, endian: ">", units: "s"}
+  - {name: los_time,        offset: 20, type: u32, endian: ">", units: "s"}
+  - {name: max_el,          offset: 24, type: i32, endian: ">", units: "deg", scale: 1.0e-3}

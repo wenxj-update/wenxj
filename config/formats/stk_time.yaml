@@ -1,0 +1,18 @@
+# 星时数据包(0x0B01) - STK 推送的真实字段定义
+# 来源:任务规划输入输出数据包-20260907.xlsx > 星时
+# 报文头:10字节统一头(包类型/总包数量/序列号/当前包序号/当前包长度)
+# 字节序:大端(>)
+name: stk_time
+description: "星时数据包:星务时间整秒+毫秒,起点2009-01-01 UTC"
+total_length: 16
+magic: 0x0B01
+magic_offset: 0
+fields:
+  - {name: packet_type,    offset: 0,  type: u16, endian: ">", units: ""}
+  - {name: total_packets,  offset: 2,  type: u16, endian: ">"}
+  - {name: sequence_no,    offset: 4,  type: u16, endian: ">"}
+  - {name: cur_packet_no,  offset: 6,  type: u16, endian: ">"}
+  - {name: cur_packet_len, offset: 8,  type: u16, endian: ">", units: "bytes"}
+  - {name: time_seconds,   offset: 10, type: u32, endian: ">", units: "s", scale: 1.0}
+  - {name: time_millis,    offset: 14, type: u16, endian: ">", units: "ms"}
+# 无校验字段(报文头+payload,定长16)

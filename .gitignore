@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 测试/缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 日志与运行产物
+logs/
+Log/
+tmp_shots/
+*.log
+
+# IDE
+.vscode/
+.idea/
+.trae/
+
+# 虚拟环境
+.venv/
+venv/
+
+# 系统
+Thumbs.db
+.DS_Store

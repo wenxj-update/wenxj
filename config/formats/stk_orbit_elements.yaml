@@ -1,0 +1,27 @@
+# 轨道根数包(0xA012) - STK 推送的真实字段定义
+# 来源:任务规划输入输出数据包-20260907.xlsx > 轨道根数
+# 字节序:大端(>);量纲:半长轴1e-5km,偏心率1e-6,角度1e-3deg
+name: stk_orbit_elements
+description: "轨道根数包:半长轴/偏心率/倾角/升交点赤经/近地点幅角/平近点角"
+total_length: 62
+magic: 0xA012
+magic_offset: 0
+fields:
+  - {name: packet_type,     offset: 0,  type: u16, endian: ">"}
+  - {name: total_packets,   offset: 2,  type: u16, endian: ">"}
+  - {name: sequence_no,     offset: 4,  type: u16, endian: ">"}
+  - {name: cur_packet_no,   offset: 6,  type: u16, endian: ">"}
+  - {name: cur_packet_len,  offset: 8,  type: u16, endian: ">", units: "bytes"}
+  - {name: epoch_seconds,   offset: 10, type: u32, endian: ">", units: "s"}
+  - {name: semi_major_axis, offset: 14, type: u32, endian: ">", units: "km",  scale: 1.0e-5}
+  - {name: eccentricity,    offset: 18, type: u32, endian: ">", scale: 1.0e-6}
+  - {name: inclination,     offset: 22, type: i32, endian: ">", units: "deg", scale: 1.0e-3}
+  - {name: raan,            offset: 26, type: i32, endian: ">", units: "deg", scale: 1.0e-3}
+  - {name: arg_perigee,     offset: 30, type: i32, endian: ">", units: "deg", scale: 1.0e-3}
+  - {name: mean_anomaly,    offset: 34, type: i32, endian: ">", units: "deg", scale: 1.0e-3}
+  - {name: reserved1,       offset: 38, type: i32, endian: ">"}
+  - {name: reserved2,       offset: 42, type: i32, endian: ">"}
+  - {name: reserved3,       offset: 46, type: i32, endian: ">"}
+  - {name: reserved4,       offset: 50, type: i32, endian: ">"}
+  - {name: reserved5,       offset: 54, type: i32, endian: ">"}
+  - {name: reserved6,       offset: 58, type: i32, endian: ">"}

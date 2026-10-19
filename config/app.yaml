@@ -1,0 +1,35 @@
+stk:
+  version: '12'
+  progid: STK12.Application
+  visible: true
+  install_dir: C:/Program Files/AGI/STK 12
+  tlb_path: bin/AgStkObjects.dll
+  scenario_path: D:/Users/87752/Documents/STK 11 (x64)/zw/zw.sc
+  step_seconds: 60.0
+  tick_ms: 1000
+  connect_push_cmds:
+  - Connect {host} {port}
+transport:
+  host: 127.0.0.1
+  port: 8001
+  frame:
+    magic: '0x0B01'
+    length_offset: 8
+    length_bytes: 2
+    length_includes: frame
+    max_frame: 4096
+    checksum_algo: crc32
+    checksum_offset: 0
+    checksum_field: -1
+algorithm:
+  # 可见性算法库:支持 .dll(动态库)与 .lib(静态库/导入库),按扩展名自动适配
+  visibility_dll: D:/wenxj/7-型号/zwxxx-3/1_文件/1_任务规划/4_测试相关文件/20260922星上测试DLL-2/20260922星上测试DLL-2/WeiNa2_floor_win.dll
+  datalink_dll: ''
+  # 纯静态库(.lib)链接时所需的附加依赖库,分号分隔(仅静态库方式需要)
+  lib_extra_deps: ''
+command_template: D:/wenxj/7-型号/zwxxx-3/1_文件/1_任务规划/4_测试相关文件/指令模板_20260918.xlsm
+packet_format_xlsx: D:/wenxj/7-型号/zwxxx-3/1_文件/1_任务规划/4_测试相关文件/任务规划输入输出数据包-20260907.xlsx
+logging:
+  level: INFO
+  file: logs/rwgh.log
+mode: real
